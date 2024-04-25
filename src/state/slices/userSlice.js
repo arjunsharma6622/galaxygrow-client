@@ -8,10 +8,10 @@ const userSlice = createSlice({
     role: "",
     phone: "",
     coordinates: {
-      lat: "28.5224036",
-      lng: "77.2366682",
+      lat: "17.366403",
+      lng: "78.5205603",
     },
-    locationName: "Noida",
+    locationName: "Hyderabad",
   },
   reducers: {
     userLogin: (state, action) => {
