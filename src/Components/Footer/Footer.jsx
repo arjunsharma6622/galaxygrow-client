@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Company Info */}
         <div className="col-span-1 md:col-span-1 lg:col-span-1">
           <div className="text-3xl font-semibold leading-10 mb-3">
-            <Link to="/" aria-label="Aresuno Home">
+            <Link to="/" aria-label="Galaxy Grow Home">
               <img src="./assets/logo.png" alt="" className="w-24" />
             </Link>
           </div>
@@ -74,9 +74,9 @@ const Footer = () => {
           <div className="text-xl font-semibold leading-8 mb-2">Follow Us</div>
           <div className="grid grid-cols-auto-32">
             <Link
-              to={"https://in.linkedin.com/company/aresuno"}
+              to={"https://in.linkedin.com/company/galaxygrow"}
               target="_blank"
-              aria-label="aresuno linkedin link"
+              aria-label="galaxy grow linkedin link"
             >
               <img
                 src="/assets/images/socials/linkedin.png"
@@ -85,9 +85,9 @@ const Footer = () => {
               />
             </Link>
             <Link
-              to={"https://www.instagram.com/aresuno.3/"}
+              to={"https://www.instagram.com"}
               target="_blank"
-              aria-label="aresuno instagram link"
+              aria-label="galaxy grow instagram link"
             >
               <img
                 src="/assets/images/socials/twitter.png"
@@ -96,9 +96,9 @@ const Footer = () => {
               />
             </Link>
             <Link
-              to={"https://www.facebook.com/people/Aresuno/100070231573790/"}
+              to={"https://www.facebook.com/"}
               target="_blank"
-              aria-label="aresuno facebook link"
+              aria-label="galaxy grow facebook link"
             >
               <img
                 src="/assets/images/socials/instagram.png"
@@ -107,9 +107,9 @@ const Footer = () => {
               />
             </Link>
             <Link
-              to={"https://www.facebook.com/people/Aresuno/100070231573790/"}
+              to={"https://www.facebook.com/"}
               target="_blank"
-              aria-label="aresuno facebook link"
+              aria-label="galaxy grow facebook link"
             >
               <img
                 src="/assets/images/socials/youtube.png"
@@ -118,9 +118,9 @@ const Footer = () => {
               />
             </Link>
             <Link
-              to={"https://www.facebook.com/people/Aresuno/100070231573790/"}
+              to={"https://www.facebook.com/"}
               target="_blank"
-              aria-label="aresuno facebook link"
+              aria-label="galaxy grow facebook link"
             >
               <img
                 src="/assets/images/socials/facebook.png"
@@ -134,7 +134,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="max-w-6xl mx-auto mt-16 text-center text-sm leading-5">
-        Copyright © 2024 aresuno.com
+        Copyright © 2024 galaxygrow.in
       </div>
     </footer>
   );

@@ -234,10 +234,10 @@ const AddCategories = () => {
             const imageData = new FormData();
             imageData.append("file", img);
             imageData.append("upload_preset", "ml_default");
-            imageData.append("folder", `aresuno/category/${category.name}`);
+            imageData.append("folder", `galaxyGrow/category/${category.name}`);
 
             const uploadResponse = await axios.post(
-              "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+              "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
               imageData,
             );
 

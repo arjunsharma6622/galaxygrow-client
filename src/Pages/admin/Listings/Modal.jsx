@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiFillExclamationCircle } from "react-icons/ai";
 import axios from "axios";
+import { API_URL } from "../../../utils/util";
 
 export default function Modal({ business, onClose }) {
   const [open, setOpen] = useState(true);
@@ -10,7 +11,7 @@ export default function Modal({ business, onClose }) {
     try {
       setIsDeleting(true);
       const res = await axios.delete(
-        `https://aresuno-server.vercel.app/api/business/${business._id}`,
+        `${API_URL}/api/business/${business._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

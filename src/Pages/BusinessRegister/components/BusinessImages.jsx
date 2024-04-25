@@ -51,12 +51,12 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
         imageData.append("file", image);
         imageData.append(
           "folder",
-          `aresuno/businessImages/${businessDetails.name}/gallery`,
+          `galaxyGrow/businessImages/${businessDetails.name}/gallery`,
         );
         imageData.append("upload_preset", "ml_default");
 
         const uploadResponse = await axios.post(
-          "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+          "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
           imageData,
         );
 
@@ -71,12 +71,12 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
           logoImageData.append("file", logoImage);
           logoImageData.append(
             "folder",
-            `aresuno/businessImages/${businessDetails.name}/logo`,
+            `galaxyGrow/businessImages/${businessDetails.name}/logo`,
           );
           logoImageData.append("upload_preset", "ml_default");
 
           const logoUploadResponse = await axios.post(
-            "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+            "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
             logoImageData,
           );
 
@@ -90,12 +90,12 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
           coverImageData.append("file", coverImage);
           coverImageData.append(
             "folder",
-            `aresuno/businessImages/${businessDetails.name}/cover`,
+            `galaxyGrow/businessImages/${businessDetails.name}/cover`,
           );
           coverImageData.append("upload_preset", "ml_default");
 
           const coverUploadResponse = await axios.post(
-            "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+            "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
             coverImageData,
           );
 

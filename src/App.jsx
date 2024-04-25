@@ -1,39 +1,38 @@
+import { useLayoutEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
+import { useSelector } from "react-redux";
 import {
   BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
   Navigate,
+  Route,
+  Routes,
+  useLocation,
 } from "react-router-dom";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import "./App.css";
-import Register from "./Pages/SignUp/Register";
-import VendorDashboard from "./Pages/Vendor/Dashboard/VendorDashboard";
-import UserDashboard from "./Pages/User/Dashboard/UserDashboard";
-import Login from "./Pages/Login/Login";
-import { useSelector } from "react-redux";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import BusinessOnboarding from "./Pages/BusinessOnboarding/BusinessOnboarding";
-import AdminDashboard from "./Pages/admin/AdminDashboard";
-import BusinessEdit from "./Pages/BusinessEdit/BusinessEdit";
-import { useLayoutEffect } from "react";
-import Services from "./Pages/Services/Services";
-import BusinessRegister from "./Pages/BusinessRegister/BusinessRegister";
-import Business from "./Pages/Business/Business";
-import Home from "./Pages/Home/Home";
-import { HelmetProvider } from "react-helmet-async";
-import PrivacyPolicy from "./Pages/Privacy/Privacy";
-import TermsAndConditions from "./Pages/Terms/Terms";
-import NotFound from "./Pages/NotFound/NotFound";
-import AboutUs from "./Pages/AboutUs/AboutUs";
-import MapComponent from "./Pages/BusinessRegister/components/MapComponent";
+import "slick-carousel/slick/slick.css";
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
 import ForgetPassword from "./Components/ForgetPassword";
+import Header from "./Components/Header/Header";
 import Blog from "./Pages/Blog/Blog";
-import BlogPage from "./Pages/BlogPage/BlogPage";
 import BlogEdit from "./Pages/BlogEdit/BlogEdit";
+import BlogPage from "./Pages/BlogPage/BlogPage";
+import Business from "./Pages/Business/Business";
+import BusinessEdit from "./Pages/BusinessEdit/BusinessEdit";
+import BusinessOnboarding from "./Pages/BusinessOnboarding/BusinessOnboarding";
+import BusinessRegister from "./Pages/BusinessRegister/BusinessRegister";
+import MapComponent from "./Pages/BusinessRegister/components/MapComponent";
 import Doctor from "./Pages/Doctor/Doctor";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import NotFound from "./Pages/NotFound/NotFound";
+import PrivacyPolicy from "./Pages/Privacy/Privacy";
+import Services from "./Pages/Services/Services";
+import Register from "./Pages/SignUp/Register";
+import TermsAndConditions from "./Pages/Terms/Terms";
+import UserDashboard from "./Pages/User/Dashboard/UserDashboard";
+import VendorDashboard from "./Pages/Vendor/Dashboard/VendorDashboard";
+import AdminDashboard from "./Pages/admin/AdminDashboard";
 import Package from "./Pages/package/Package";
 
 function App() {
@@ -128,7 +127,6 @@ function Main() {
           />
           <Route path={"/:city/:categoryName"} element={<Services />} />
           <Route path="/contact" element={<h1>Contact</h1>} />
-          <Route path="/about" element={<AboutUs />} />
           <Route path="/map" element={<MapComponent />} />
           <Route
             path="/blog/:categoryName"

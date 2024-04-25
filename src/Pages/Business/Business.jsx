@@ -211,7 +211,7 @@ const Business = () => {
             <title>{`${business.name} in ${business.address?.city} - ${business.category?.name}`}</title>
             <meta name="description" content={business.description} />
             <meta name="keywords" content={business.name} />
-            <meta name="author" content="aresuno" />
+            <meta name="author" content="galaxy grow" />
             <script type="application/ld+json">
               {JSON.stringify(businessStrDataStructure)}
             </script>

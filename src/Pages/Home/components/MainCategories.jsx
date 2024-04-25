@@ -17,9 +17,7 @@ const MainCategories = () => {
       </div>
       <div className="m-auto self-center w-full  max-w-[1200px] mt-12 max-md:max-w-full max-md:mt-10">
         <div className="flex flex-wrap gap-4 md:gap-10 justify-center items-start">
-          {categoriesToShowOnHome
-            .slice(0, numberOfIconsToShow)
-            .map((category, index) => (
+          {categoriesToShowOnHome && categoriesToShowOnHome.slice(0, numberOfIconsToShow).map((category, index) => (
               <Link
                 key={index}
                 to={`${userLocationName?.toLowerCase()}/${category.name

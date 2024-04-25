@@ -25,9 +25,8 @@ const Header = ({ homePage }) => {
         } text-black hidden md:flex`}
       >
         <div className={` text-2xl font-semibold`}>
-          {/* <Link to="/">Aresuno</Link> */}
-          <Link to={"/"} aria-label="Aresuno Home">
-            <img src="/assets/logo.png" alt="" className=" w-20 object-cover" />
+          <Link to={"/"} aria-label="Galaxy Grow Home">
+            <img src="/assets/logo.png" alt="" className=" w-16 object-cover" />
           </Link>
         </div>
 
@@ -134,7 +133,7 @@ const Header = ({ homePage }) => {
         } text-black shadow-md relative flex justify-between items-center px-4 py-4 md:hidden`}
       >
         <div className="text-xl font-medium text-blue-500">
-          <Link to="/" aria-label="Aresuno Home">
+          <Link to="/" aria-label="Galaxy Grow Home">
             {/* <span>A.s</span> */}
             <img src="/assets/logo.png" alt="" className=" w-14 object-cover" />
           </Link>

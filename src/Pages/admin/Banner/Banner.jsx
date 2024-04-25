@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FiEdit2, FiPlus, FiUploadCloud, FiX } from "react-icons/fi";
 import { toast } from "react-toastify";
-import { ToastParams } from "../../../utils/util";
+import { API_URL, ToastParams } from "../../../utils/util";
 
 const Banner = () => {
   const [banner, setBanner] = useState({ image: { url: "" } });
@@ -14,7 +14,7 @@ const Banner = () => {
   const fetchBanner = async () => {
     try {
       const res = await axios.get(
-        "https://aresuno-server.vercel.app/api/banner",
+        `${API_URL}/api/banner`,
       );
       setBanner(res.data[0]);
     } catch (err) {
@@ -37,10 +37,10 @@ const Banner = () => {
       const imageData = new FormData();
       imageData.append("file", bannerImage);
       imageData.append("upload_preset", "ml_default");
-      imageData.append("folder", "aresuno/banner");
+      imageData.append("folder", "galaxyGrow/banner");
 
       const uploadResponse = await axios.post(
-        "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+        "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
         imageData,
       );
 
@@ -63,12 +63,12 @@ const Banner = () => {
 
       if (banner.image) {
         await axios.put(
-          `https://aresuno-server.vercel.app/api/banner/${banner._id}`,
+          `${API_URL}/api/banner/${banner._id}`,
           { image: bannerImageUrl },
         );
       } else {
         const res = await axios.post(
-          "https://aresuno-server.vercel.app/api/banner/add",
+          `${API_URL}/api/banner/add`,
           bannerData,
         );
         console.error(res.data);

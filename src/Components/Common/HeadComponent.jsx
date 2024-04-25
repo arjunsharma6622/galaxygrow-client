@@ -2,13 +2,13 @@ import { Helmet } from "react-helmet-async";
 import keyword_extractor from "keyword-extractor";
 
 const HeadComponent = ({ _title, _description, _image }) => {
-  const title = _title ? _title + " | Aresuno" : "Aresuno";
+  const title = _title ? _title + " | Galaxy Grow" : "Galaxy Grow";
   const description = _description
     ? _description
     : "Find your next service at most affordable prices.";
   const image = _image
     ? _image
-    : "https://res.cloudinary.com/dexnb3wkw/image/upload/v1705314004/aresuno/banner/background-template-with-mandala-pattern-design_1308-44444_ngkych.avif";
+    : "https://res.cloudinary.com/dexnb3wkw/image/upload/v1705314004/galaxyGrow/banner/background-template-with-mandala-pattern-design_1308-44444_ngkych.avif";
 
   return (
     <Helmet>
@@ -34,7 +34,7 @@ const HeadComponent = ({ _title, _description, _image }) => {
       <meta property="og:type" content="" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:site_name" content="Aresuno" />
+      <meta property="og:site_name" content="Galaxy Grow" />
     </Helmet>
   );
 };

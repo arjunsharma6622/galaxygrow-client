@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiCheckCircle, FiEdit3, FiTrash2, FiXCircle } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import EditModal from "./EditModal";
 import DeleteModal from "./DeleteModal";
+import { API_URL } from "../../../utils/util";
+import axios from "axios";
 
 const AllCategories = () => {
-  const categories = useSelector((state) => state.categories);
+  // const categories = useSelector((state) => state.categories);
+  const [categories, setCategories] = useState([]);
+
   const categoriesTitles = useSelector((state) => state.categoriestitle);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -15,6 +19,19 @@ const AllCategories = () => {
     useState(null);
 
   const [selectedBusinessType, setSelectedBusinessType] = useState("service");
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await axios.get(`${API_URL}/api/category`);
+        setCategories(res.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    fetchCategories();
+  }, [selectedBusinessType, selectedCategoryToEdit, selectedMainCategoryToEdit]);
 
   return (
     <div className="flex flex-col gap-10">

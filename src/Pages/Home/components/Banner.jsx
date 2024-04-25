@@ -6,6 +6,7 @@ import { getBanner } from "../../../state/slices/bannerSlice";
 import Header from "../../../Components/Header/Header";
 import { Link, useNavigate } from "react-router-dom";
 import PlaceSearch from "./PlaceSearch";
+import { API_URL } from "../../../utils/util";
 
 const Banner = () => {
   const bannerUrl = useSelector((state) => state.banner.url);
@@ -20,7 +21,7 @@ const Banner = () => {
     const fetchBanner = async () => {
       try {
         const res = await axios.get(
-          "https://aresuno-server.vercel.app/api/banner",
+          `${API_URL}/api/banner`,
         );
         dispatch(getBanner(res.data[0].image));
       } catch (err) {

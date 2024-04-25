@@ -4,7 +4,7 @@ import axios from "axios";
 const AllUsers = ({ users, vendors }) => {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://aresuno-server.vercel.app/api/user/${id}`, {
+      await axios.delete(`https://galaxygrow-server.vercel.app/api/user/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

@@ -1,15 +1,13 @@
-import Banner from "./components/Banner";
-import ServiceCategories from "./components/ServiceCategories";
-import MainCategories from "./components/MainCategories";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { getBanner } from "../../state/slices/bannerSlice";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useDispatch } from "react-redux";
+import { getBanner } from "../../state/slices/bannerSlice";
+import { setAllCategories } from "../../state/slices/categoriesSlice";
 import { userLogout } from "../../state/slices/userSlice";
 import { API_URL } from "../../utils/util";
-import { setAllCategories } from "../../state/slices/categoriesSlice";
-import { setAllCategoryTitle } from "../../state/slices/categoriestitleSlice";
+import Banner from "./components/Banner";
+import MainCategories from "./components/MainCategories";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -40,9 +38,7 @@ const Home = () => {
   const fetchAllCategories = async () => {
     try {
       const res = await axios.get(`${API_URL}/api/category/`);
-      const resTitles = await axios.get(`${API_URL}/api/category-title/`);
       dispatch(setAllCategories(res.data));
-      dispatch(setAllCategoryTitle(resTitles.data));
     } catch (err) {
       console.error("Error fetching categories:", err);
     }
@@ -57,34 +53,34 @@ const Home = () => {
   return (
     <div className="bg-white flex flex-col gap-4">
       <Helmet>
-        <title>Aresuno - Discover and Rate Services</title>
-        <meta name="author" content="Aresuno" />
-        <link rel="canonical" href="https://www.aresuno.com" />
+        <title>Galaxy Grow - grow your business</title>
+        <meta name="author" content="Galaxy Grow" />
+        <link rel="canonical" href="https://www.galaxygrow.in" />
         <meta
           name="description"
-          content="Explore and discover a wide range of services on Aresuno. Find ratings, reviews, images, and addresses for different services. Your go-to platform for service recommendations."
+          content="Grow your business with Galaxy Grow. Discover and rate services. Find ratings, reviews, images, and addresses for different services. Your go-to platform for service recommendations."
         />
         <meta
           name="keywords"
-          content="services, ratings, reviews, images, addresses, Aresuno, discover services"
+          content="services, service, service rating, service reviews, service images, service addresses, service recommendations, service search"
         />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Aresuno - Discover and Rate Services"
+          content="Galaxy Grow - grow your business"
         />
         <meta
           property="og:description"
-          content="and discover a wide range of services on Aresuno. Find ratings, reviews, images, and addresses for different services. Your go-to platform for service recommendations."
+          content="and discover a wide range of services on our platform. Find ratings, reviews, images, and addresses for different services. Your go-to platform for service recommendations."
         />
-        <meta property="og:url" content="https://www.aresuno.com/" />
-        <meta property="og:site_name" content="Aresuno" />
+        <meta property="og:url" content="https://www.galaxygrow.in" />
+        <meta property="og:site_name" content="Galaxy Grow" />
       </Helmet>
 
       <Banner />
       <MainCategories />
-      <ServiceCategories />
+      {/* <ServiceCategories /> */}
     </div>
   );
 };

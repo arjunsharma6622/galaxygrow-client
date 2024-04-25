@@ -148,11 +148,11 @@ const AdminDashboard = () => {
   return (
     <div className="flex h-screen">
       <Helmet>
-        <title>Aresuno - Admin</title>
+        <title>Galaxy Grow - Admin</title>
       </Helmet>
       <div className="flex-[2] overflow-y-auto border-r border-gray-300 p-10 flex flex-col justify-between items-start">
         <div className="flex items-center gap-4">
-          <h2 className="text-2xl font-semibold">ARESUNO ADMIN</h2>
+          <h2 className="text-2xl font-semibold">Galaxy Grow Admin</h2>
         </div>
 
         <Sidebar

@@ -60,31 +60,31 @@ const Doctor = () => {
   return (
     <div className="bg-white flex flex-col gap-4">
       <Helmet>
-        <title>Aresuno - Home</title>
-        <meta name="description" content="Aresuno - Home" />
-        <meta name="keywords" content="Aresuno - Home" />
-        <meta name="author" content="Aresuno - Home" />
-        <link rel="canonical" href="https://www.aresuno.com" />
+        <title>Galaxy Grow - Home</title>
+        <meta name="description" content="Galaxy Grow - Home" />
+        <meta name="keywords" content="Galaxy Grow - Home" />
+        <meta name="author" content="Galaxy Grow" />
+        <link rel="canonical" href="https://www.galaxygrow.in" />
         <meta
           name="description"
-          content="Explore and discover a wide range of services on Aresuno. Find ratings, reviews, images, and addresses for different services. Your go-to platform for service recommendations."
+          content="Grow your business with Galaxy Grow"
         />
         <meta
           name="keywords"
-          content="services, ratings, reviews, images, addresses, Aresuno, discover services"
+          content="services, ratings, reviews, images, addresses, discover services, grow, business"
         />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Aresuno - Discover and Rate Services"
+          content="Galaxy Grow - grow your business"
         />
         <meta
           property="og:description"
-          content="and discover a wide range of services on Aresuno. Find ratings, reviews, images, and addresses for different services. Your go-to platform for service recommendations."
+          content="Grow your business with Galaxy Grow"
         />
-        <meta property="og:url" content="https://www.aresuno.com/" />
-        <meta property="og:site_name" content="Aresuno" />
+        <meta property="og:url" content="https://www.galaxygrow.in/" />
+        <meta property="og:site_name" content="Galaxy Grow" />
       </Helmet>
 
       <Banner />

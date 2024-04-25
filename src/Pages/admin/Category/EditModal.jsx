@@ -45,10 +45,10 @@ export default function EditModal({ category, onClose, categoryTitle }) {
       const imageData = new FormData();
       imageData.append("file", imageToUpdate);
       imageData.append("upload_preset", "ml_default");
-      imageData.append("folder", `aresuno/category/${category.name}`);
+      imageData.append("folder", `galaxyGrow/category/${category.name}`);
 
       const uploadResponse = await axios.post(
-        "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+        "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
         imageData,
         {
           headers: {
@@ -69,10 +69,10 @@ export default function EditModal({ category, onClose, categoryTitle }) {
       const iconData = new FormData();
       iconData.append("file", icon);
       iconData.append("upload_preset", "ml_default");
-      iconData.append("folder", `aresuno/category/${category.name}`);
+      iconData.append("folder", `galaxyGrow/category/${category.name}`);
 
       const uploadResponse = await axios.post(
-        "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+        "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
         iconData,
       );
       const iconUrl = uploadResponse.data.secure_url;

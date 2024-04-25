@@ -1,12 +1,13 @@
 import { FiEdit2, FiExternalLink, FiTrash2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../../../utils/util";
 
 const AllBusinesses = ({ businesses, categories }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://aresuno-server.vercel.app/api/business/${id}`,
+        `${API_URL}/api/business/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

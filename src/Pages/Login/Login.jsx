@@ -85,10 +85,10 @@ const Login = () => {
     <div className=" flex items-center justify-center h-screen">
       <section className="w-full max-w-md">
         <div className={` login w-full`}>
-          <div className="shadow-lg w-full p-8 bg-white rounded-xl">
-            <p className="text-3xl font-bold mb-6 text-center text-blue-500">
-              Aresuno
-            </p>
+          <div className="shadow-lg w-full p-8 pt-4 bg-white rounded-xl">
+            <div className="w-full mb-4">
+              <img src="/assets/logo.png" alt="" className="mx-auto w-20"/>
+            </div>
 
             <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
             <form onSubmit={handleSubmit} className="w-full max-m-md">
