@@ -9,6 +9,9 @@ export default function EditModal({ category, onClose, categoryTitle }) {
   const [open, setOpen] = useState(true);
   const [isUpdating, setIsUpdating] = useState(false);
 
+  const [isDescGenerating, setIsDescGenerating] = useState(false);
+  const [isKeywordsGenerating, setIsKeywordsGenerating] = useState(false);
+
   const editUrl = category
     ? `${API_URL}/api/category/${category._id}`
     : `${API_URL}/api/category-title/${categoryTitle._id}`;
@@ -159,11 +162,55 @@ export default function EditModal({ category, onClose, categoryTitle }) {
     onClose(); // Close the modal
   };
 
+  const handleGenerateDescription = async () => {
+    try {
+      setIsDescGenerating(true);
+      const res = await axios.get(
+        `${API_URL}/api/generateCategoryDescription/${category.name}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        },
+      );
+      setSubCategoryToEdit({
+        ...subCategoryToEdit,
+        description: res.data.description,
+      });
+      setIsDescGenerating(false);
+    } catch (err) {
+      setIsDescGenerating(false);
+      console.error(err);
+    }
+  };
+
+  const handleGenerateKeywords = async () => {
+    try {
+      setIsKeywordsGenerating(true);
+      const res = await axios.get(
+        `${API_URL}/api/generateCategoryKeywords/${category.name}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        },
+      );
+      setIsKeywordsGenerating(false);
+      setSubCategoryToEdit({
+        ...subCategoryToEdit,
+        keywords: res.data.keywords,
+      });
+    } catch (err) {
+      setIsKeywordsGenerating(false);
+      console.error(err);
+    }
+  };
+
   return (
     <div>
       {open && (
         <div className="z-[40] fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-sm">
-          <div className="bg-white flex flex-col gap-6 p-6 rounded-lg w-[55%]">
+          <div className="bg-white flex flex-col gap-6 p-6 rounded-lg w-[55%] max-h-[90vh] overflow-scroll">
             <div className="flex items-center justify-center gap-6">
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 flex items-center justify-center rounded-full bg-gray-100">
@@ -339,12 +386,40 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                   </div>
 
                   <div className="w-full flex flex-col gap-1 text-sm">
-                    <label htmlFor="altTag" className="font-medium text-base">
-                      Keywords{" "}
-                      <span className="text-gray-500 text-sm font-normal">
-                        - add comma separated keywords
-                      </span>
-                    </label>
+                    <div className="flex gap-4 justify-start items-center">
+                      <label htmlFor="altTag" className="font-medium text-base">
+                        Keywords{" "}
+                        <span className="text-gray-500 text-sm font-normal">
+                          - comma separated
+                        </span>
+                      </label>
+
+                      <button
+                        disabled={isKeywordsGenerating}
+                        onClick={handleGenerateKeywords}
+                        className={`flex justify-start items-center gap-1 text-xs px-2 py-1 border rounded-md w-fit bg-gray-200 ${isKeywordsGenerating ? "cursor-not-allowed" : "cursor-pointer"}`}
+                      >
+                        <div className="flex justify-center items-center">
+                          {isKeywordsGenerating ? (
+                            <div
+                              className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-gray-500 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                              role="status"
+                            >
+                              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                                Loading...
+                              </span>
+                            </div>
+                          ) : (
+                            <img
+                              src="/assets/images/chat-gpt.png"
+                              alt=""
+                              className="w-4 h-4"
+                            />
+                          )}
+                        </div>
+                        Generate Keywords
+                      </button>
+                    </div>
 
                     <textarea
                       type="text"
@@ -355,7 +430,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                           ? subCategoryToEdit.keywords
                           : ""
                       }
-                      className="text-base w-full border border-gray-300 p-2 rounded-md resize-none"
+                      className="text-base w-full border border-gray-300 p-2 rounded-md"
                       onChange={(e) => {
                         setSubCategoryToEdit({
                           ...subCategoryToEdit,
@@ -366,9 +441,38 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                   </div>
 
                   <div className="w-full flex flex-col gap-1 text-sm">
-                    <label htmlFor="altTag" className="font-medium text-base">
-                      Description
-                    </label>
+                    <div className="flex gap-4 justify-start items-center">
+                      <label htmlFor="altTag" className="font-medium text-base">
+                        Description
+                      </label>
+
+
+                      <button
+                        disabled={isDescGenerating}
+                        onClick={handleGenerateDescription}
+                        className={`flex justify-start items-center gap-1 text-xs px-2 py-1 border rounded-md w-fit bg-gray-200 ${isDescGenerating ? "cursor-not-allowed" : "cursor-pointer"}`}
+                      >
+                        <div className="flex justify-center items-center">
+                          {isDescGenerating ? (
+                            <div
+                              className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-gray-500 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                              role="status"
+                            >
+                              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                                Loading...
+                              </span>
+                            </div>
+                          ) : (
+                            <img
+                              src="/assets/images/chat-gpt.png"
+                              alt=""
+                              className="w-4 h-4"
+                            />
+                          )}
+                        </div>
+                        Generate Description
+                      </button>
+                    </div>
 
                     <textarea
                       type="text"
