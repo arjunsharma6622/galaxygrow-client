@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 export const API_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000"
-    : "https://galaxygrow-server.vercel.app";
+    : "https://api.galaxygrow.in";
 
 export const ToastParams = {
   position: "top-center",
