@@ -787,10 +787,4 @@
   </url>
 
 <!-- businesses -->
-  <url>
-    <loc>https://www.galaxygrow.in/business/asdf</loc>
-    <lastmod>2024-04-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
 </urlset>
