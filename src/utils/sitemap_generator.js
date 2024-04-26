@@ -2,15 +2,15 @@ import fs from "fs";
 import axios from "axios";
 
 // base backend api url.
-const base_api_url = "https://aresuno-server.vercel.app/api";
+const base_api_url = "https://galaxygrow-server.vercel.app/api";
 
-const base_url = "https://www.aresuno.com";
+const base_url = "https://www.galaxygrow.in";
 
 // dont have to do anything fancy, we can just hardcode simple routes for now.
 const simple_routes = ["blogs", "help"];
 
 // we also hardcode cities.
-const cities = ["noida", "bengaluru", "mumbai"];
+const cities = ["noida", "bengaluru", "mumbai", "hyderabad"];
 
 // helper function to join urls
 const join_url = (one, two) => {
