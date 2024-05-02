@@ -55,7 +55,7 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
         imageData.append("upload_preset", "ml_default");
 
         const uploadResponse = await axios.post(
-          "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+          "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
           imageData,
         );
 
@@ -76,7 +76,7 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
             logoImageData.append("upload_preset", "ml_default");
 
             const logoUploadResponse = await axios.post(
-              "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+              "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
               logoImageData,
             );
 
@@ -100,7 +100,7 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
             coverImageData.append("upload_preset", "ml_default");
 
             const coverUploadResponse = await axios.post(
-              "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+              "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
               coverImageData,
             );
 
@@ -148,7 +148,7 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
   //         imageData.append("upload_preset", "ml_default");
 
   //         const uploadResponse = await axios.post(
-  //           "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+  //           "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
   //           imageData
   //         );
 
@@ -167,7 +167,7 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
   //             );
   //             logoImageData.append("upload_preset", "ml_default");
 
-  //             const logoUploadResponse = await axios.post("https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload", logoImageData);
+  //             const logoUploadResponse = await axios.post("https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload", logoImageData);
   //             return logoUploadResponse.secure_url;
   //         }
   //       }
@@ -182,7 +182,7 @@ const BusinessImages = ({ businessDetails, setBusinessDetails }) => {
   //             );
   //             coverImageData.append("upload_preset", "ml_default");
 
-  //             const coverUploadResponse = await axios.post("https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload", coverImageData);
+  //             const coverUploadResponse = await axios.post("https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload", coverImageData);
   //             return coverUploadResponse.secure_url;
   //         }
   //       }
