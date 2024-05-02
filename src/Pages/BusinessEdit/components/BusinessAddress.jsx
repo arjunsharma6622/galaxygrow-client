@@ -3,6 +3,7 @@ import MapComponent from "../../BusinessRegister/components/MapComponent";
 import { BiNavigation } from "react-icons/bi";
 import axios from "axios";
 import { API_URL } from "../../../utils/util";
+import {toast, ToastContainer} from "react-toastify"
 
 const BusinessAddress = ({ businessDetails, setBusinessDetails }) => {
   const [isAddressValidated, setIsAddressValidated] = useState(false);
@@ -39,6 +40,19 @@ const BusinessAddress = ({ businessDetails, setBusinessDetails }) => {
       });
 
       setIsAddressValidated(true);
+
+      toast.success("Address validated successfully", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        closeButton: false,
+      });
+      
       setisAddressValidationLoading(false);
     } catch (error) {
       console.error(error);
@@ -172,15 +186,15 @@ const BusinessAddress = ({ businessDetails, setBusinessDetails }) => {
               <p>Drag the marker to the exact location of your business</p>
             )}
 
-            {businessDetails.address.coordinates[0] &&
-              businessDetails.address.coordinates[1] && (
+            {/* {businessDetails.address?.coordinates[0] &&
+              businessDetails.address?.coordinates[1] && (
                 <div className="flex flex-col gap-4">
                   <MapComponent
                     businessDetails={businessDetails}
                     setBusinessDetails={setBusinessDetails}
                   />
                 </div>
-              )}
+              )} */}
           </div>
         </div>
       </div>
