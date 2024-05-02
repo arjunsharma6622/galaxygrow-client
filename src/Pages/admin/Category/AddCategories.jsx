@@ -272,12 +272,13 @@ const AddCategories = () => {
         return {
           ...category,
           image: { url: imgUrls[index], altTag: category.image.altTag },
+          icon : imgUrls[index],
           businessType: selectedBusinessType,
         };
       });
 
       const res = await axios.post(
-        `${API_URL}/api/category/create`,
+        `${API_URL}/api/category/add`,
         updatedCategories,
         {
           headers: {
