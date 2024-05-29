@@ -60,7 +60,7 @@ const Profile = ({ user }) => {
       imageData.append("upload_preset", "ml_default");
       imageData.append("folder", "aresuno/vendors");
       const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/dexnb3wkw/image/upload",
+        "https://api.cloudinary.com/v1_1/dexnb3wk2/image/upload",
         imageData,
       );
       const imageUrl = res.data.secure_url;
