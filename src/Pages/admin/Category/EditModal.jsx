@@ -396,6 +396,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                         </span>
                       </label>
 
+{ !category.keywordsGptGenerated &&
                       <button
                         disabled={isKeywordsGenerating}
                         onClick={handleGenerateKeywords}
@@ -421,6 +422,8 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                         </div>
                         Generate Keywords
                       </button>
+}
+
                     </div>
 
                     <textarea
@@ -448,7 +451,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                         Description
                       </label>
 
-
+{ !category.descriptionGptGenerated &&
                       <button
                         disabled={isDescGenerating}
                         onClick={handleGenerateDescription}
@@ -474,6 +477,9 @@ export default function EditModal({ category, onClose, categoryTitle }) {
                         </div>
                         Generate Description
                       </button>
+}
+
+
                     </div>
 
                     <textarea
