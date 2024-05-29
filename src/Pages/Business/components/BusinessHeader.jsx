@@ -102,7 +102,7 @@ const BusinessHeader = ({
         </div>
       </div>
 
-      <div className="flex md:flex-row flex-col mt-3 w-full md:p-6 md:px-10 md:items-start md:justify-start">
+      <div className="flex md:flex-row flex-col mt-3 w-full md:p-6 md:px-10 md:items-center md:justify-start">
         <div className="flex md:flex-[9] py-2 justify-center items-center">
           <div className="w-full bg-cover bg-center">
             <div className="flex flex-col md:flex-row md:gap-6 justify-start items-center">
@@ -224,7 +224,7 @@ const BusinessHeader = ({
                 <span>Follow Business</span>
               </span>
             </button>
-            <button
+            {/* <button
               className="w-full flex items-center justify-center gap-2 p-2  rounded-full border border-solid border-red-600 text-sm md:text-base"
               onClick={handleUnfollowBusiness}
             >
@@ -232,7 +232,7 @@ const BusinessHeader = ({
               <span className="text-red-600 font-semibold">
                 <span>Unfollow Business</span>
               </span>
-            </button>
+            </button> */}
 
             <div className="flex items-center gap-2 w-full">
               <button

@@ -26,7 +26,7 @@ const Header = ({ homePage }) => {
       >
         <div className={` text-2xl font-semibold`}>
           <Link to={"/"} aria-label="Galaxy Grow Home">
-            <img src="/assets/logo.png" alt="" className=" w-16 object-cover" />
+            <img src={`/assets/${homePage ? "logo1.png" : "logo.png"}`} alt="" className=" w-16 object-cover" />
           </Link>
         </div>
 

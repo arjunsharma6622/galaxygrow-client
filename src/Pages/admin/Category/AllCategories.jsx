@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiCheckCircle, FiEdit3, FiTrash2, FiXCircle } from "react-icons/fi";
+import { FiCheck, FiCheckCircle, FiEdit3, FiTrash2, FiXCircle } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import EditModal from "./EditModal";
 import DeleteModal from "./DeleteModal";
@@ -140,6 +140,16 @@ const AllCategories = () => {
                       </div>
                     </div>
                   </div>
+                    {category.descriptionGptGenerated && category.keywordsGptGenerated && (
+                      <div className="absolute right-2 top-2 flex items-center gap-1">
+                        <img
+                          src="/assets/images/chat-gpt.png"
+                          alt=""
+                          className="w-4 h-4"
+                        />
+                        <span className="text-[10px] text-gray-500">GPT</span>
+                      </div>
+                    )}
                 </div>
               ))}
           </div>

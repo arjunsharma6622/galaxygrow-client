@@ -166,7 +166,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
     try {
       setIsDescGenerating(true);
       const res = await axios.get(
-        `${API_URL}/api/generateCategoryDescription/${category.name}`,
+        `${API_URL}/api/generateCategoryDescription?categoryName=${category.name}&categoryId=${category._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -176,6 +176,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
       setSubCategoryToEdit({
         ...subCategoryToEdit,
         description: res.data.description,
+        descriptionGptGenerated : true
       });
       setIsDescGenerating(false);
     } catch (err) {
@@ -188,7 +189,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
     try {
       setIsKeywordsGenerating(true);
       const res = await axios.get(
-        `${API_URL}/api/generateCategoryKeywords/${category.name}`,
+        `${API_URL}/api/generateCategoryKeywords?categoryName=${category.name}&categoryId=${category._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -199,6 +200,7 @@ export default function EditModal({ category, onClose, categoryTitle }) {
       setSubCategoryToEdit({
         ...subCategoryToEdit,
         keywords: res.data.keywords,
+        keywordsGptGenerated : true
       });
     } catch (err) {
       setIsKeywordsGenerating(false);

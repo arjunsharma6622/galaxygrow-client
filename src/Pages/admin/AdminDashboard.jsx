@@ -192,7 +192,7 @@ const AdminDashboard = () => {
                 {selectedField === "Users" && (
                   <AllUsers users={users} vendors={vendors} />
                 )}
-                {selectedField === "Home" && <AdminHome />}
+                {selectedField === "Home" && <AdminHome totalCategories={categories?.length} totalEnquiries={enquiries?.length} totalBlogs={blogs?.length} totalLeads={callLeads?.length} totalBusinesses={businesses?.length} totalUsers={users?.length + vendors?.length}/>}
                 {selectedField === "Enquiries" && (
                   <Enquiries enquiries={enquiries} />
                 )}
