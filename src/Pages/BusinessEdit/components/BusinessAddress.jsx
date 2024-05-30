@@ -186,7 +186,7 @@ const BusinessAddress = ({ businessDetails, setBusinessDetails }) => {
               <p>Drag the marker to the exact location of your business</p>
             )}
 
-            {/* {businessDetails.address?.coordinates[0] &&
+            {businessDetails.address?.coordinates[0] &&
               businessDetails.address?.coordinates[1] && (
                 <div className="flex flex-col gap-4">
                   <MapComponent
@@ -194,7 +194,7 @@ const BusinessAddress = ({ businessDetails, setBusinessDetails }) => {
                     setBusinessDetails={setBusinessDetails}
                   />
                 </div>
-              )} */}
+              )}
           </div>
         </div>
       </div>

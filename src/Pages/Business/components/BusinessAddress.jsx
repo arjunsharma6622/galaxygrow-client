@@ -20,7 +20,7 @@ const BusinessAddress = ({ business }) => {
         allowFullScreen
         className="rounded-xl h-[240px] md:h-[400px] border-none"
         referrerPolicy="no-referrer-when-downgrade"
-        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyABgLLjLKkUT86jshhsoWlWY8VXV8hi9oY&q=${business.address.coordinates[1]},${business.address.coordinates[0]}`}
+        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDBubkbjaj-d4oKuwiQNyBYtWGybKBhDCM&q=${business.address.coordinates[1]},${business.address.coordinates[0]}`}
       ></iframe>
     </div>
   );
