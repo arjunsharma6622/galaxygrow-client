@@ -409,7 +409,7 @@ const Register = () => {
                       </span>
                     </div>
 
-                    <div className="line h-[1.4px] w-full mt-9 mb-9 bg-gray-300 relative">
+                    {/* <div className="line h-[1.4px] w-full mt-9 mb-9 bg-gray-300 relative">
                       <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 text-gray-400 text-sm font-light">
                         Or
                       </span>
@@ -441,7 +441,7 @@ const Register = () => {
                         />
                         <span>Signup with Google</span>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 ) : !otpVerified ? (
                   <div className=" w-full mt-10">

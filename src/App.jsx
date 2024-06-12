@@ -73,6 +73,8 @@ function Main() {
         !isBusinessEditPage &&
         !isDoctorsPage &&
         !isAdminPage && <Header />}
+
+
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -142,6 +144,9 @@ function Main() {
           <Route path="/forget-password" element={<ForgetPassword />} />
         </Routes>
       </div>
+
+
+
       {!isLoginPage &&
         !isSignpuPage &&
         !isDashboard &&
